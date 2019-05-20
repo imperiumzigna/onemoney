@@ -17,5 +17,15 @@ RSpec.configure do |config|
             }
         ]
       }', headers: {})
+    stub_request(:get, /min-api.cryptocompare.com/)
+      .with(headers: {
+              'Accept' => '*/*'
+            }).to_return(status: 200, body: '
+      {
+        "status": true,
+        "USD":  7737.99,
+        "JPY": 852661.59,
+        "EUR": 6942.83
+      }', headers: {})
   end
 end

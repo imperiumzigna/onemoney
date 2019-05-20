@@ -3,8 +3,8 @@
 require 'rest-client'
 require 'json'
 
-# Exchange Service (DEPRECATED)
-class ExchangeService
+# crypto Service
+class CryptoService
   def initialize(source_currency, target_currency, amount)
     @source_currency = source_currency
     @target_currency = target_currency
@@ -13,8 +13,7 @@ class ExchangeService
 
   def perform
     res = RestClient.get url
-    value = JSON.parse(res.body)['currency'][0]['value'].to_f
-
+    value = JSON.parse(res.body)[@target_currency].to_f
     value * @amount
   rescue RestClient::ExceptionWithResponse => e
     e.response
@@ -22,15 +21,15 @@ class ExchangeService
 
   private
 
-  def exchange_api_key
-    Rails.application.credentials[Rails.env.to_sym][:currency_api_key]
+  def crypto_api_key
+    Rails.application.credentials[Rails.env.to_sym][:crypto_api_key]
   end
 
-  def exchange_api_url
-    Rails.application.credentials[Rails.env.to_sym][:currency_api_url]
+  def crypto_api_url
+    Rails.application.credentials[Rails.env.to_sym][:crypto_api_url]
   end
 
   def url
-    "#{exchange_api_url}?token=#{exchange_api_key}&currency=#{@source_currency}/#{@target_currency}"
+    "#{crypto_api_url}&api_key=#{crypto_api_key}&fsym=#{@source_currency}&tsyms=#{@target_currency}"
   end
 end
