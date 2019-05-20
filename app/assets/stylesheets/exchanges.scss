@@ -1,5 +1,5 @@
 body {
-  background: image-url("/background-img.jpg") no-repeat center center fixed;
+  background: image-url("/bg.bmp") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -9,7 +9,6 @@ body {
 .main{
   margin-top: 50px;
 }
- 
  
 .title-box{
   margin-top: 20%;
@@ -27,8 +26,7 @@ body {
     margin-right: 10px;
   }
 }
- 
- 
+
 .exchange_box{
   margin: 10px auto;
   .logo-box{

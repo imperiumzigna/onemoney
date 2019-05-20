@@ -4,7 +4,6 @@
       <%= t('exchange.index.exchange_box.header') %>
     </div>
     <div class='card-block'>
-      <%= form_tag('/convert', method: :get, id: 'exchange_form') do %>
         <div class='local_currency'>
           <div class='form-group'>
             <p class='title'><%= t('exchange.index.exchange_box.main_card.local_currency') %></p>
@@ -23,10 +22,15 @@
             <input type='text' id='result' name='result' class='form-control' placeholder='<%= t('exchange.index.exchange_box.main_card.result') %>' readonly>
           </div>
         </div>
-        <div>
-          <button id="exchange" type='submit' class='btn btn-primary btn-exchange col-md-12'><%= t('exchange.index.exchange_box.submit_button') %></button>
-        </div>
-      <% end %>
+    </div>
+    <div class="card-footer">
+    <label><%= t('exchange.index.exchange_box.main_card.translate') %></label>
+      <a href="/?locale=ptbr">
+        <img alt="brazil" src="https://img.icons8.com/color/32/000000/brazil.png">
+      </a>
+      <a href="/?locale=en">
+        <img src="https://img.icons8.com/color/32/000000/usa.png">
+      </a>
     </div>
   </div>
 </div>

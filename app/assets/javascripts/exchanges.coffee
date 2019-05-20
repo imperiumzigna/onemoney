@@ -1,7 +1,5 @@
 $(document).ready ->
- 
-  $('form').submit ->
-    if $('form').attr('action') == '/convert'
+  $('#amount, #source_currency, #target_currency').change ->
       $.ajax '/convert',
           type: 'GET'
           dataType: 'json'

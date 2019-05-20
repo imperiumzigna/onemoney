@@ -36,10 +36,12 @@ en:
       subtitle: 'To any exchange on the planet'
       exchange_box:
         header: 'Start converting now'
+        submit_button: 'EXCHANGE'
         main_card:
           local_currency: 'Local currency'
           amount: 'Value ($10)'
           result: 'Result'
           destination_currency: 'Choosen currency'
-        submit_button: 'EXCHANGE'
+          translate: 'Translate to:'
+
 
