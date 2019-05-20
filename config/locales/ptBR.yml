@@ -1,0 +1,13 @@
+ptBR:
+  exchange:
+    index:
+      title: 'Converta facilmente suas Moedas.'
+      subtitle: 'Para qualquer moeda no Mundo!'
+      exchange_box:
+        header: 'Simule sua conversão'
+        main_card:
+          local_currency: 'Moeda Local'
+          amount: 'Quantidade (R$10)'
+          result: 'Resultado'
+          destination_currency: 'Moeda Pretendida'
+        submit_button: 'CONVERTER'
