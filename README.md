@@ -1,24 +1,59 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Requisitos:
 
-Things you may want to cover:
+```
+* ruby 2.6.3
+* Postgresql 9.6
+* Nodejs v10+
+```
 
-* Ruby version
+### Configuração
 
-* System dependencies
+1. Altere o arquivo database.yml na pasta **config** para suas configurações de base de dados.
 
-* Configuration
+2. Criação da base
 
-* Database creation
+```
+rails db:setup
+```
 
-* Database initialization
+3. Configuração da api Key
 
-* How to run the test suite
+```
+EDITOR=nano rails credentials:edit
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Docker
 
-* Deployment instructions
+1. Cria o container
 
-* ...
+```
+  docker-compose build web
+```
+
+2. Inicia serviço
+
+```
+docker-compose up -d web
+```
+
+3. Encontra a Container ID
+
+```
+docker ps
+```
+
+4. Conecta sessão to terminal ao container
+
+```
+docker attach [Container ID]
+```
+
+Obs.: Os passos 3 e 4 são necessário para que o byebug funcione com o docker.
+
+### Descrição
+
+Uma aplicação web que permite converter moedas e cripto moedas de diversos formatos.
+
+![](docs/index.png)
